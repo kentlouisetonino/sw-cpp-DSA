@@ -1,6 +1,5 @@
 #include <iostream>
 #include "../../helpers/helpers.hpp"
-using namespace std;
 
 struct Node {
   // This holds the data of the node.
@@ -44,7 +43,7 @@ class LinkedList {
       temp = head;
 
       while(temp != NULL) {
-        cout << temp -> data << '\t';
+        std::cout << temp -> data << '\t';
         temp = temp -> next;
       }
     }
@@ -102,14 +101,14 @@ void linked_list_singly_02(void) {
   // View all the node value.
   add_new_line();
   add_new_line();
-  cout << "EXAMPLE: linked_list_singly_02.cpp" << endl;
+  std::cout << "EXAMPLE: linked_list_singly_02.cpp" << std::endl;
   add_new_line();
   list.traverse();
 
   // View the remaining nodes after deleting the first node.
   add_new_line();
   add_new_line();
-  cout << "EXAMPLE: linked_list_singly_02.cpp (after first node deletion)" << endl;
+  std::cout << "EXAMPLE: linked_list_singly_02.cpp (after first node deletion)" << std::endl;
   add_new_line();
   list.delete_first();
   list.traverse();
@@ -117,7 +116,7 @@ void linked_list_singly_02(void) {
   // View the remaining nodes after deleting the last node.
   add_new_line();
   add_new_line();
-  cout << "EXAMPLE: linked_list_singly_02 (after last node deletion)" << endl;
+  std::cout << "EXAMPLE: linked_list_singly_02 (after last node deletion)" << std::endl;
   add_new_line();
   list.delete_last();
   list.traverse();
@@ -125,7 +124,7 @@ void linked_list_singly_02(void) {
   // View the remaining nodes after deleting an arbitrary position.
   add_new_line();
   add_new_line();
-  cout << "EXAMPLE: linked_list_singly_02 (after arbitrary position deletion)" << endl;
+  std::cout << "EXAMPLE: linked_list_singly_02 (after arbitrary position deletion)" << std::endl;
   add_new_line();
   list.delete_position(3);
   list.traverse();
