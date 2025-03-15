@@ -17,9 +17,10 @@ int main(void) {
 
   // Linear Data Structure: Singly Linked List exmaples.
   // linked_list_singly_01();
+  linked_list_singly_02();
 
   // Linear Data Structure: Queue examples.
-  queue_01();
+  // queue_01();
 
   // Add new line before the program ends.
   add_new_line();
