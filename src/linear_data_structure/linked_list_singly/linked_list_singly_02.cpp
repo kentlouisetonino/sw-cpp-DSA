@@ -23,7 +23,7 @@ class LinkedList {
     }
 
     // Create a LinkedList node.
-    void createNode(int value) {
+    void create_node(int value) {
       Node *temp = new Node;
       temp -> data = value;
       temp -> next = NULL;
@@ -42,10 +42,19 @@ class LinkedList {
     void traverse() {
       Node *temp = new Node;
       temp = head;
+
       while(temp != NULL) {
         cout << temp->data << '\t';
         temp = temp -> next;
       }
+    }
+
+    // Delete the first node.
+    void delete_first() {
+      Node *temp = new Node;
+      temp = head;
+      head = head -> next;
+      delete temp;
     }
 };
 
@@ -53,16 +62,25 @@ void linked_list_singly_02(void) {
   LinkedList list;
 
   // Insert the values and create node.
-  list.createNode(1);
-  list.createNode(3);
-  list.createNode(5);
-  list.createNode(7);
-  list.createNode(9);
+  list.create_node(1);
+  list.create_node(3);
+  list.create_node(5);
+  list.create_node(7);
+  list.create_node(9);
 
+  // View all the node value.
   add_new_line();
   add_new_line();
   cout << "EXAMPLE: linked_list_singly_02.cpp" << endl;
   add_new_line();
+  list.traverse();
+
+  // View the remaining node after deletion.
+  add_new_line();
+  add_new_line();
+  cout << "EXAMPLE: linked_list_singly_02.cpp (after deletion)" << endl;
+  add_new_line();
+  list.delete_first();
   list.traverse();
   add_new_line();
   add_new_line();
