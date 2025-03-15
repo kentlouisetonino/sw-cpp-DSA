@@ -1,7 +1,7 @@
 #include <stack>
 #include <cassert>
 #include <iostream>
-#include "../../helpers//helpers.hpp"
+#include "../../helpers/helpers.hpp"
 
 void stack_01(void) {
   // Print function information.
