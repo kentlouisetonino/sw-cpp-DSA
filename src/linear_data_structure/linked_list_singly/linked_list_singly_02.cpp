@@ -44,7 +44,7 @@ class LinkedList {
       temp = head;
 
       while(temp != NULL) {
-        cout << temp->data << '\t';
+        cout << temp -> data << '\t';
         temp = temp -> next;
       }
     }
@@ -55,6 +55,35 @@ class LinkedList {
       temp = head;
       head = head -> next;
       delete temp;
+    }
+
+    // Delete the last node.
+    void delete_last() {
+      Node *current = new Node;
+      Node *previous = new Node;
+      current = head;
+
+      while (current -> next != NULL) {
+        previous = current;
+        current = current -> next;
+      }
+
+      previous -> next = NULL;
+      delete current;
+    }
+
+    // Delete node at an arbitrary position.
+    void delete_position(int position) {
+      Node *current = new Node;
+      Node *previous = new Node;
+      current = head;
+
+      for (int i = 1; i < position; i++) {
+        previous = current;
+        current = current -> next;
+      }
+
+      previous -> next = current -> next;
     }
 };
 
@@ -67,6 +96,8 @@ void linked_list_singly_02(void) {
   list.create_node(5);
   list.create_node(7);
   list.create_node(9);
+  list.create_node(11);
+  list.create_node(13);
 
   // View all the node value.
   add_new_line();
@@ -75,12 +106,28 @@ void linked_list_singly_02(void) {
   add_new_line();
   list.traverse();
 
-  // View the remaining node after deletion.
+  // View the remaining nodes after deleting the first node.
   add_new_line();
   add_new_line();
-  cout << "EXAMPLE: linked_list_singly_02.cpp (after deletion)" << endl;
+  cout << "EXAMPLE: linked_list_singly_02.cpp (after first node deletion)" << endl;
   add_new_line();
   list.delete_first();
+  list.traverse();
+
+  // View the remaining nodes after deleting the last node.
+  add_new_line();
+  add_new_line();
+  cout << "EXAMPLE: linked_list_singly_02 (after last node deletion)" << endl;
+  add_new_line();
+  list.delete_last();
+  list.traverse();
+
+  // View the remaining nodes after deleting an arbitrary position.
+  add_new_line();
+  add_new_line();
+  cout << "EXAMPLE: linked_list_singly_02 (after arbitrary position deletion)" << endl;
+  add_new_line();
+  list.delete_position(3);
   list.traverse();
   add_new_line();
   add_new_line();
